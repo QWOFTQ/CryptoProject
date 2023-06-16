@@ -1,0 +1,16 @@
+{% extends "../template/_layout.html" %}
+<!--  -->
+{% block css %}
+<link rel="stylesheet" href="../../public/css/profile.css" />
+{% endblock %}
+<!--  -->
+{% block content %}
+<div id="content">
+  <ul>
+    <li>ID : {{user.userid}}</li>
+    <li>PW : {{user.userpw}}</li>
+    <li>NAME : {{user.username}}</li>
+  </ul>
+</div>
+<a href="/user/quit">회원탈퇴</a>
+{% endblock %}
