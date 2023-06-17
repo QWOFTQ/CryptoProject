@@ -7,10 +7,11 @@
 {% block content %}
 <div id="content">
   <ul>
-    <li>ID : {{user.userid}}</li>
-    <li>PW : {{user.userpw}}</li>
-    <li>NAME : {{user.username}}</li>
+    <li style="font-size: larger;">ID : {{user.userid}}</li> <br/>
+    <li style="font-size: larger;">PW : {{user.userpw}}</li> <br/>
+    <li style="font-size: larger;">NAME : {{user.username}}</li> <br/>
   </ul>
 </div>
-<a href="/user/quit">회원탈퇴</a>
+<br/>
+<button type="submit" style="font-size: larger"><a href="/user/quit">회원탈퇴</a></button>
 {% endblock %}
