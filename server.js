@@ -1,9 +1,11 @@
-const express = require ('express');
+const express = require('express');
 const nunjucks = require('nunjucks');
 const session = require('express-session');
 const MemoryStore = require('memorystore')(session);
 const userRouter = require('./routes/userRouter');
 const boardRouter = require('./routes/boardRouter');
+
+const app = express();
 
 const maxAge = 1000 * 60 * 5;
 
