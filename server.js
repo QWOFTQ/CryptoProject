@@ -63,7 +63,7 @@ const forge = require('node-forge')
 const pki = forge.pki
 
 //1. 인증서를 파일에서 읽어오기
-fs.readFile('Cert.pem', 'utf8', function (err, data) {
+fs.readFile('cert.pem', 'utf8', function (err, data) {
   if (err) {
     return console.log(err)
   }
@@ -74,7 +74,7 @@ fs.readFile('Cert.pem', 'utf8', function (err, data) {
   console.log(pki.publicKeyToPem(publicKey))
 })
 
-let certPem = fs.readFileSync('Cert.pem', 'utf8')
+let certPem = fs.readFileSync('cert.pem', 'utf8')
 let caCert = pki.certificateFromPem(certPem)
 let publicKey = caCert.publicKey
 console.log(pki.publicKeyToPem(publicKey))
