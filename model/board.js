@@ -1,4 +1,4 @@
-const list = [
+const list = [      // 게시판 글목록 임시 데이터
     {
         subject:'사과는',
         username:'과일',
