@@ -4,6 +4,11 @@ const session = require('express-session');
 const MemoryStore = require('memorystore')(session);
 const userRouter = require('./routes/userRouter');
 const boardRouter = require('./routes/boardRouter');
+const https = require('https')
+const path = require('path')
+const fs = require('fs')
+
+
 
 const app = express();
 
@@ -40,4 +45,14 @@ app.get('/', (req, res) => {
 app.use('/user', userRouter);
 app.use('/board', boardRouter);
 
-app.listen(3000);
+
+
+const sslServer = https.createServer(
+  {
+    key: fs.readFileSync(path.join(__dirname, 'certificate', 'key.pem')),
+    cert: fs.readFileSync(path.join(__dirname, 'certificate', 'cert.pem')),
+   
+  }, app
+)
+
+sslServer.listen(3000, ()=> console.log('SSL SERVER'))
